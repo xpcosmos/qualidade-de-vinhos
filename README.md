@@ -71,4 +71,40 @@ Select KBest|Seleção de atributos|
 Vamos separar 30% dos dados para teste e 80% dos dados para treino.
 Antes de treinarmos o modelo, vamos utilizar diferentes algorítimos para a relação dos atributos e testar eles.
 
+## Resultado
+
+Visualizando a nossa matriz de confução, tivermos os seguintes resultado:
+
+### Matriz de confusão
+
+![regressao-logistica](https://user-images.githubusercontent.com/85235525/158451728-9d46d9bd-3ed3-4e55-a2d1-b0d798113837.jpeg)
+
+
+![KNeighborsClassifier](https://user-images.githubusercontent.com/85235525/158451809-661ac581-7b39-43cb-b64a-a2fd25773417.jpeg)
+
+
+![DecisionTreeClassifier](https://user-images.githubusercontent.com/85235525/158451920-af97c8b2-fb9d-4ef3-8c6f-500a11bd4641.jpeg)
+
+
+![MultinomialNB](https://user-images.githubusercontent.com/85235525/158452032-a9f8bc17-9429-4ce4-bea2-7de0ab42231b.jpeg)
+
+## Conclusão
+
+Modelo|Seleção|Acertos(conjunto de teste)
+------|-------|---------
+LogisticRegression|RFE|88%
+LogisticRegression|KBest|53.6%
+KNeighborsClassifier|RFE|55.7%
+KNeighborsClassifier|KBest|**98.5%**
+DecisionTreeClassifier|RFE|*51.6%*
+DecisionTreeClassifier|KBest|**100%**
+MultinomialNB|RFE|*42.9%*
+MultinomialNB|KBest|*54.2%*
+
+Os melhores desempenhos ficam por conta dos modelo KNeighborsClassifier e DecisionTreeClassifier, ambos utilizando o KBest como escolha de atributos. Os piores desemprenhos foram dos modelos MultinomialNB e DecisionTreeClassifier, ambos utilizando RFE como escolha de atributos.
+O objetivo principal era conseguir uma matriz de confusão o mais próximo possível de uma matriz diagonal:
+
+![download](https://user-images.githubusercontent.com/85235525/158453594-75b17e69-7f6c-4614-b0e5-0a0114006e80.png)
+
+
 
